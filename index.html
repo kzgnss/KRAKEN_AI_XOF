@@ -72,10 +72,79 @@
 </head>
 <body class="min-h-screen flex flex-col items-center p-4 overflow-x-hidden relative">
 
-    <div id="view-instructions" class="app-view flex-1 w-full max-w-xl flex flex-col items-center pt-4 pb-20 animate-fade-in z-10">
+    <div id="view-country" class="app-view flex-1 w-full max-w-xl flex flex-col items-center justify-center animate-fade-in z-10 py-10">
+        <div class="text-center mb-8">
+            <h1 class="text-3xl font-black text-white tracking-tighter mb-2">SÉLECTIONNEZ LA RÉGION</h1>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Choisissez votre pays</p>
+        </div>
+
+        <div class="w-full space-y-4 px-2">
+            <!-- Côte d'Ivoire -->
+            <button class="btn-country w-full bg-zinc-900 border border-zinc-800 hover:border-green-500 rounded-2xl p-4 flex items-center gap-4 transition-all" data-geo="CI">
+                <div class="text-4xl">🇨🇮</div>
+                <div class="text-left">
+                    <span class="block font-bold text-white text-lg">Côte d'Ivoire</span>
+                    <span class="text-xs text-zinc-500 font-mono">Devise: XOF (CFA)</span>
+                </div>
+                <div class="ml-auto text-zinc-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </button>
+
+            <!-- Togo -->
+            <button class="btn-country w-full bg-zinc-900 border border-zinc-800 hover:border-yellow-500 rounded-2xl p-4 flex items-center gap-4 transition-all" data-geo="TG">
+                <div class="text-4xl">🇹🇬</div>
+                <div class="text-left">
+                    <span class="block font-bold text-white text-lg">Togo</span>
+                    <span class="text-xs text-zinc-500 font-mono">Devise: XOF (CFA)</span>
+                </div>
+                <div class="ml-auto text-zinc-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </button>
+
+            <!-- Benin -->
+            <button class="btn-country w-full bg-zinc-900 border border-zinc-800 hover:border-blue-500 rounded-2xl p-4 flex items-center gap-4 transition-all" data-geo="BJ">
+                <div class="text-4xl">🇧🇯</div>
+                <div class="text-left">
+                    <span class="block font-bold text-white text-lg">Bénin</span>
+                    <span class="text-xs text-zinc-500 font-mono">Devise: XOF (CFA)</span>
+                </div>
+                <div class="ml-auto text-zinc-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </button>
+
+            <!-- Burkina Faso -->
+            <button class="btn-country w-full bg-zinc-900 border border-zinc-800 hover:border-red-500 rounded-2xl p-4 flex items-center gap-4 transition-all" data-geo="BF">
+                <div class="text-4xl">🇧🇫</div>
+                <div class="text-left">
+                    <span class="block font-bold text-white text-lg">Burkina Faso</span>
+                    <span class="text-xs text-zinc-500 font-mono">Devise: XOF (CFA)</span>
+                </div>
+                <div class="ml-auto text-zinc-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </button>
+
+            <!-- Cameroun -->
+            <button class="btn-country w-full bg-zinc-900 border border-zinc-800 hover:border-green-600 rounded-2xl p-4 flex items-center gap-4 transition-all" data-geo="CM">
+                <div class="text-4xl">🇨🇲</div>
+                <div class="text-left">
+                    <span class="block font-bold text-white text-lg">Cameroun</span>
+                    <span class="text-xs text-zinc-500 font-mono">Devise: XAF (FCFA)</span>
+                </div>
+                <div class="ml-auto text-zinc-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div id="view-instructions" class="app-view hidden flex-1 w-full max-w-xl flex-col items-center pt-4 pb-20 animate-fade-in z-10">
         <div class="text-center mb-6">
             <h1 class="text-3xl font-black text-white tracking-tighter mb-2">INSTRUCTIONS</h1>
-            <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Comment utiliser le prédicteur</p>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Comment utiliser le Prédicteur</p>
         </div>
 
         <div class="bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-2xl p-6 shadow-2xl w-full text-left relative overflow-hidden mb-6">
@@ -84,8 +153,8 @@
                 <div class="flex gap-4 items-start">
                     <div class="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/50 flex items-center justify-center text-xl shrink-0 shadow-[0_0_15px_rgba(59,130,246,0.2)]">💰</div>
                     <div>
-                        <h3 class="text-white font-bold mb-1">Montant de la mise</h3>
-                        <p class="text-sm text-zinc-400 leading-relaxed">Commencez avec de petits montants (5 à 10 % de votre solde). C'est nécessaire pour chauffer l'algorithme et éviter d'attirer l'attention du système anti-fraude du casino.</p>
+                        <h3 class="text-white font-bold mb-1">Montant du pari</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Commencez par de petits montants (5 à 10 % de votre solde). Cela est nécessaire pour chauffer l'algorithme et éviter la détection anti-fraude du casino.</p>
                     </div>
                 </div>
 
@@ -93,8 +162,8 @@
                 <div class="flex gap-4 items-start">
                     <div class="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/50 flex items-center justify-center text-xl shrink-0 shadow-[0_0_15px_rgba(168,85,247,0.2)]">🎯</div>
                     <div>
-                        <h3 class="text-white font-bold mb-1">Génération de signal</h3>
-                        <p class="text-sm text-zinc-400 leading-relaxed">Choisissez un jeu et cliquez sur le bouton pour obtenir un signal. L'algorithme vous donnera un chemin sûr (cases) ou un multiplicateur exact.</p>
+                        <h3 class="text-white font-bold mb-1">Génération de Signal</h3>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Sélectionnez un jeu et cliquez sur le bouton pour obtenir un signal. L'algorithme vous donnera un chemin sûr (cases) ou un multiplicateur exact.</p>
                     </div>
                 </div>
 
@@ -107,14 +176,14 @@
                         RÈGLE STRICTE !
                     </h3>
                     <p class="text-sm text-red-200 leading-relaxed relative z-10">
-                        Si le prédicteur affiche un multiplicateur exact, <strong>respectez-le strictement</strong> et encaissez vos gains à cette valeur. IL EST STRICTEMENT INTERDIT d'être gourmand et de risquer d'attendre un multiplicateur plus élevé !
+                        Si le prédicteur affiche un multiplicateur exact, <strong>suivez-le strictement</strong> et encaissez à cette valeur. IL EST STRICTEMENT INTERDIT d'être gourmand et d'attendre un multiplicateur plus élevé !
                     </p>
                 </div>
             </div>
         </div>
 
         <button type="button" id="btn-understand" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-bold text-lg tracking-wider transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center gap-3">
-            J'AI COMPRIS LES RÈGLES, COMMENCER
+            J'AI COMPRIS, COMMENCER
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </button>
     </div>
@@ -126,18 +195,18 @@
                 <path d="M60 40 L65 50 L55 60 L65 60 L75 45 L65 35 Z" />
                 <path d="M70 55 L75 65 L65 75 L75 75 L85 60 L75 50 Z" />
             </svg>
-            <h1 class="text-4xl font-black text-white tracking-tighter mb-2">COMPTE <span class="text-green-500">ASSOCIÉ</span></h1>
+            <h1 class="text-4xl font-black text-white tracking-tighter mb-2">COMPTE <span class="text-green-500">LIÉ</span></h1>
             <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Étape 2 : Vérification du réseau</p>
         </div>
 
         <div class="bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-2xl p-8 shadow-2xl w-full text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-green-500"></div>
-            <h2 class="text-xl font-black text-white mb-4">Finalisation de l'activation</h2>
+            <h2 class="text-xl font-black text-white mb-4">Terminer l'activation</h2>
             <p class="text-sm text-zinc-400 mb-8 leading-relaxed">
-                Votre compte a été reconnu par le réseau KRAKEN. Une synchronisation finale est nécessaire pour créer le tunnel d'injection.
+                Votre compte de pari a été reconnu par le réseau KRAKEN. Nous devons effectuer une synchronisation finale pour établir un tunnel d'exploitation sécurisé.
             </p>
             <button type="button" id="btn-sync" class="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 rounded-xl font-bold text-lg tracking-wider transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center justify-center gap-3">
-                SYNCHRONISER
+                SYNCHRONISER MAINTENANT
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
             </button>
         </div>
@@ -163,29 +232,25 @@
     <div id="view-games" class="app-view hidden flex-1 w-full max-w-xl flex-col items-center pt-10 pb-20 animate-fade-in z-10">
         <div class="text-center mb-8">
             <h2 class="text-2xl font-black text-white tracking-tight mb-2">SÉLECTIONNEZ LA CIBLE</h2>
-            <p class="text-sm text-zinc-500">Choisissez un jeu à pirater</p>
+            <p class="text-sm text-zinc-500">Choisissez un jeu pour injecter le script</p>
         </div>
 
         <div class="grid grid-cols-2 gap-4 w-full px-2">
-            <!-- Mines -->
             <button class="game-card bg-zinc-900 border border-zinc-800 hover:border-blue-500 rounded-2xl p-6 flex flex-col items-center gap-4 transition-all" data-game="Mines">
                 <div class="text-5xl">💣</div>
                 <span class="font-bold text-white tracking-widest text-sm">MINES</span>
             </button>
             
-            <!-- Aviator -->
             <button class="game-card bg-zinc-900 border border-zinc-800 hover:border-red-500 rounded-2xl p-6 flex flex-col items-center gap-4 transition-all" data-game="Aviator">
                 <div class="text-5xl">✈️</div>
                 <span class="font-bold text-white tracking-widest text-sm">AVIATOR</span>
             </button>
             
-            <!-- Thimbles -->
             <button class="game-card bg-zinc-900 border border-zinc-800 hover:border-yellow-500 rounded-2xl p-6 flex flex-col items-center gap-4 transition-all" data-game="Thimbles">
                 <div class="text-5xl">🎩</div>
                 <span class="font-bold text-white tracking-widest text-sm">THIMBLES</span>
             </button>
 
-            <!-- Apple -->
             <button class="game-card bg-zinc-900 border border-zinc-800 hover:border-green-500 rounded-2xl p-6 flex flex-col items-center gap-4 transition-all" data-game="Apple">
                 <div class="text-5xl">🍏</div>
                 <span class="font-bold text-white tracking-widest text-sm text-center">APPLE OF FORTUNE</span>
@@ -203,9 +268,9 @@
                 <div>
                     <div class="flex items-center gap-2 mb-1">
                         <span class="w-2 h-2 bg-green-500 rounded-full success-glow"></span>
-                        <span class="text-xs font-black text-green-500 tracking-wider">TUNNEL ACTIF</span>
+                        <span class="text-xs font-black text-green-500 tracking-wider">TUNNEL SÉCURISÉ</span>
                     </div>
-                    <p class="text-[10px] font-bold text-zinc-500 tracking-widest uppercase">Cible : <span id="target-game-name" class="text-white"></span></p>
+                    <p class="text-[10px] font-bold text-zinc-500 tracking-widest uppercase">Cible: <span id="target-game-name" class="text-white"></span></p>
                 </div>
             </div>
             <div class="text-right">
@@ -214,9 +279,8 @@
             </div>
         </div>
 
-        <!-- Dynamic Signal Container -->
         <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 w-full mb-8 relative flex justify-center items-center min-h-[250px]" id="signal-container">
-            <!-- Injected via JS based on game -->
+            <!-- Injected via JS -->
         </div>
 
         <div class="w-full px-4">
@@ -242,7 +306,7 @@
                         <span class="w-2 h-2 bg-yellow-500 rounded-full warning-glow"></span>
                         <span class="text-xs font-black text-yellow-500 tracking-wider">EN ATTENTE DE DÉPÔT</span>
                     </div>
-                    <p class="text-[10px] font-bold text-zinc-500 tracking-widest uppercase">Tunnel : Bloqué</p>
+                    <p class="text-[10px] font-bold text-zinc-500 tracking-widest uppercase">Tunnel: Bloqué</p>
                 </div>
             </div>
         </div>
@@ -252,10 +316,10 @@
                 <svg class="w-32 h-32 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             </div>
             
-            <h3 class="text-lg font-black text-white mb-2 relative z-10">Solde nul détecté</h3>
+            <h3 class="text-lg font-black text-white mb-2 relative z-10">Solde Zéro Détecté</h3>
             <p class="text-sm text-zinc-300 leading-relaxed relative z-10">
-                Votre signal d'essai a été utilisé. Le réseau KRAKEN a détecté un solde de <span class="text-yellow-500 font-bold bg-yellow-500/10 px-1 py-0.5 rounded border border-yellow-500/20">0.00 XOF</span> sur votre compte. <br><br>
-                Pour contourner le système anti-fraude et recevoir les signaux suivants sans risque de blocage, l'algorithme nécessite un solde de jeu actif.
+                Votre signal d'essai gratuit a été utilisé. Le réseau KRAKEN a détecté un solde de <span class="text-yellow-500 font-bold bg-yellow-500/10 px-1 py-0.5 rounded border border-yellow-500/20">0.00 <span id="dyn-currency-code-1"></span></span> sur votre compte. <br><br>
+                Pour contourner le système anti-fraude et recevoir des signaux continus sans être bloqué, l'algorithme nécessite un solde de jeu actif.
             </p>
         </div>
 
@@ -266,14 +330,14 @@
                 <div class="flex gap-3 items-start">
                     <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 font-bold mt-0.5">1</span> 
                     <p class="text-sm text-zinc-300 leading-relaxed">
-                        Effectuez un dépôt sur votre compte de jeu.<br>
-                        <span class="block mt-1.5 text-xs">Montant min. : <span class="text-green-400 font-bold font-mono bg-green-900/20 px-1.5 py-0.5 rounded border border-green-500/20">2 000 XOF</span></span>
+                        Faites un dépôt sur votre compte de pari.<br>
+                        <span class="block mt-1.5 text-xs">Minimum requis : <span class="text-green-400 font-bold font-mono bg-green-900/20 px-1.5 py-0.5 rounded border border-green-500/20" id="dyn-min-deposit"></span></span>
                     </p>
                 </div>
                 <div class="flex gap-3 items-start">
                     <span class="bg-blue-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 font-bold mt-0.5">2</span> 
                     <p class="text-sm text-zinc-300 leading-relaxed">
-                        Faites une capture d'écran du dépôt réussi ou de votre nouveau solde.
+                        Faites une capture d'écran montrant votre nouveau solde ou le reçu du dépôt réussi.
                     </p>
                 </div>
                 <div class="flex gap-3 items-start">
@@ -286,14 +350,14 @@
         </div>
 
         <div class="w-full space-y-3">
-            <a href="https://refpa69905.com/L?tag=d_5160092m_128937c_ald&site=5160092&ad=128937" target="_blank" class="w-full bg-gradient-to-r from-blue-700 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)]">
-                Recharger le solde
+            <a href="https://refpa69905.com/L?tag=d_5160092m_128937c_ald&site=5160092&ad=128937" target="_blank" rel="noreferrer" class="w-full bg-gradient-to-r from-blue-700 to-blue-500 hover:from-blue-600 hover:to-blue-400 text-white py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                Faire un Dépôt
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
             </a>
 
             <a href="https://telegram.me/Jeffrey_Kraken_AI_bot" target="_blank" rel="noreferrer" class="w-full bg-[#2AABEE] hover:bg-[#229ED9] text-white py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(42,171,238,0.4)]">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.888-.662 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                Envoyer la capture d'écran
+                Envoyer la Capture d'écran
             </a>
         </div>
     </div>
@@ -303,7 +367,16 @@
     </div>
 
     <script>
+        const geoData = {
+            'CI': { name: 'Côte d\'Ivoire', currencyStr: 'XOF', code: 'XOF', minDeposit: '1 200' },
+            'TG': { name: 'Togo', currencyStr: 'XOF', code: 'XOF', minDeposit: '1 200' },
+            'BJ': { name: 'Bénin', currencyStr: 'XOF', code: 'XOF', minDeposit: '1 200' },
+            'BF': { name: 'Burkina Faso', currencyStr: 'XOF', code: 'XOF', minDeposit: '1 200' },
+            'CM': { name: 'Cameroun', currencyStr: 'XAF', code: 'XAF', minDeposit: '1 200' }
+        };
         
+        let userGeo = geoData['CI']; // Default
+
         function switchView(targetViewId) {
             document.querySelectorAll('.app-view').forEach(v => {
                 v.classList.add('hidden');
@@ -341,27 +414,40 @@
             }, delay + 800);
         }
 
+        // 0. Country Selection -> Instructions
+        document.querySelectorAll('.btn-country').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const geoCode = e.currentTarget.dataset.geo;
+                userGeo = geoData[geoCode];
+                
+                // Pre-populate dynamic texts for the deposit screen
+                document.getElementById('dyn-currency-code-1').innerText = userGeo.code;
+                document.getElementById('dyn-min-deposit').innerText = `${userGeo.minDeposit} ${userGeo.currencyStr}`;
+                
+                switchView('view-instructions');
+            });
+        });
 
-        // 0. Manual -> Sync Landing
+        // 1. Instructions -> Sync Landing
         document.getElementById('btn-understand').addEventListener('click', () => {
             switchView('view-landing');
         });
 
-        // 1. Initial Sync -> Game Selection
+        // 2. Initial Sync -> Game Selection
         document.getElementById('btn-sync').addEventListener('click', () => {
             const lines = [
                 "[ OK ] Connexion à l'API du serveur...",
-                "[ OK ] Connexion établie. Vérification de l'ID.",
-                "[ OK ] Code promo vérifié.",
-                "[....] Demande des modules de contournement...",
-                "[ OK ] Tous les modules ont été chargés avec succès."
+                "[ OK ] Authentification réussie. Validation de l'ID.",
+                "[ OK ] Code promo XXOR vérifié.",
+                "[....] Demande des modules d'exploitation...",
+                "[ OK ] Tous les modules chargés avec succès."
             ];
             playTerminalSequence('kraken_sync.exe', lines, () => {
                 switchView('view-games');
             });
         });
 
-        // 2. Select Game -> Show Signal (Always < 2x for Aviator)
+        // 3. Select Game -> Show Signal (Always < 2x for Aviator)
         document.querySelectorAll('.game-card').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const gameName = e.currentTarget.dataset.game;
@@ -369,25 +455,25 @@
                 const lines = [
                     `[....] Injection du script dans ${gameName}...`,
                     `[ OK ] Protocole de contournement actif.`,
-                    `[....] Collecte des données RNG...`,
+                    `[....] Extraction des données RNG...`,
                     `<span class='text-green-500'>[ OK ] Hash décrypté. Signal prêt.</span>`
                 ];
 
                 playTerminalSequence(`hack_${gameName.toLowerCase()}.dll`, lines, () => {
-                    document.getElementById('target-game-name').innerText = gameName.toUpperCase();
+                    document.getElementById('target-game-name').innerText = gameName;
                     renderSignal(gameName);
                     switchView('view-signal');
                 });
             });
         });
 
-        // 3. Request Next Signal -> Deposit Block (XOF)
+        // 4. Request Next Signal -> Deposit Block
         document.getElementById('btn-next-signal').addEventListener('click', () => {
             const lines = [
                 "[....] Demande du hash suivant...",
                 "[WARN] Vérification de l'état du portefeuille...",
-                "<span class='text-yellow-500'>[FAIL] Solde actuel : 0.00 XOF</span>",
-                "<span class='text-red-500'>[ERR] Accès d'essai épuisé. Blocage !</span>"
+                `<span class='text-yellow-500'>[FAIL] Solde actuel : 0.00 ${userGeo.code}</span>`,
+                "<span class='text-red-500'>[ERR] Essai gratuit épuisé. Exploit bloqué !</span>"
             ];
             playTerminalSequence('kraken_core.exe', lines, () => {
                 switchView('view-deposit');
@@ -427,7 +513,7 @@
                         <h3 class="text-6xl font-black text-red-500 font-mono drop-shadow-[0_0_20px_rgba(239,68,68,0.5)]">
                             ${mult}x
                         </h3>
-                        <p class="text-red-500/80 text-xs mt-3 font-bold uppercase animate-pulse">N'attendez pas plus !</p>
+                        <p class="text-red-500/80 text-xs mt-3 font-bold uppercase animate-pulse">N'attendez pas !</p>
                     </div>
                 `;
             }
@@ -464,7 +550,7 @@
                             <div class="text-5xl animate-bounce drop-shadow-[0_0_15px_rgba(34,197,94,0.8)]">🎩</div>
                             <div class="text-5xl opacity-30">🎩</div>
                         </div>
-                        <p class="text-green-500 font-bold uppercase tracking-widest text-sm">La balle est au centre</p>
+                        <p class="text-green-500 font-bold uppercase tracking-widest text-sm">Balle au milieu</p>
                     </div>
                 `;
             }
@@ -477,10 +563,13 @@
             {name: 'THIMBLES', icon: '🎩'}
         ];
 
-        const geoConfigs = [
-            { flag: '🇨🇮', currency: 'XOF', mult: 600 }, 
-            { flag: '🇸🇳', currency: 'XOF', mult: 600 }, 
-            { flag: '🇨🇲', currency: 'XAF', mult: 600 }  
+        // Multi-geo configuration for the hybrid feed
+        const feedGeoConfigs = [
+            { flag: '🇨🇮', currency: 'XOF', mult: 600 },
+            { flag: '🇹🇬', currency: 'XOF', mult: 600 },
+            { flag: '🇧🇯', currency: 'XOF', mult: 600 },
+            { flag: '🇧🇫', currency: 'XOF', mult: 600 },
+            { flag: '🇨🇲', currency: 'XAF', mult: 600 }
         ];
 
         function generateRandomId() {
@@ -490,10 +579,11 @@
 
         function showLiveWin() {
             const game = fakeGames[Math.floor(Math.random() * fakeGames.length)];
-            const geo = geoConfigs[Math.floor(Math.random() * geoConfigs.length)];
+            const geo = feedGeoConfigs[Math.floor(Math.random() * feedGeoConfigs.length)];
             
-            const usdAmount = Math.floor(Math.random() * 130) + 20;
+            const usdAmount = Math.floor(Math.random() * 105) + 15;
             const localAmount = (usdAmount * geo.mult); 
+            // Formatting with space for thousands (e.g. 15 000)
             const formattedAmount = '+' + localAmount.toLocaleString('fr-FR') + ' ' + geo.currency;
 
             const feedContainer = document.getElementById('live-feed');
@@ -509,7 +599,7 @@
                         <p class="text-[12px] font-bold text-white tracking-widest font-mono">
                             ${geo.flag} ID: ${generateRandomId()}
                         </p>
-                        <p class="text-[10px] text-zinc-400 font-sans uppercase">PIRATAGE ${game.name}</p>
+                        <p class="text-[10px] text-zinc-400 font-sans uppercase">EXPLOIT ${game.name}</p>
                     </div>
                     <div class="text-right">
                         <p class="text-sm font-black text-green-400 font-mono">${formattedAmount}</p>
